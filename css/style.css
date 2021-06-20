@@ -25,6 +25,17 @@ button {
   cursor: pointer;
 }
 
+.input {
+  border: 1px solid #D9D9D9;
+  border-radius: 2px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #BFBFBF;
+  background-repeat: no-repeat;
+  background-position: left 10px center;
+  padding: 8px 0 8px 35px;
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -383,17 +394,8 @@ template {
 }
 
 .header__input {
-  min-width: 690px;
-  height: 40px;
-  border: 1px solid #D9D9D9;
-  border-radius: 2px;
-  font-size: 16px;
-  line-height: 24px;
-  color: #BFBFBF;
+  width: 690px;
   background-image: url(../img/header/home-input.svg);
-  background-repeat: no-repeat;
-  background-position: left 10px center;
-  padding-left: 35px;
 }
 
 .header__buttons {
@@ -434,5 +436,162 @@ template {
 
 .header__icon {
   margin-right: 5px;
+}
+
+.promo {
+  -webkit-box-shadow: 0px 7px 12px rgba(158, 158, 163, 0.1);
+          box-shadow: 0px 7px 12px rgba(158, 158, 163, 0.1);
+  padding: 68px 71px;
+  background: #FFF1B8 url(../img/promo/pizza.png) no-repeat top right/43%;
+  border-radius: 10px;
+}
+
+.promo__title {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 39px;
+  line-height: 46px;
+  color: #302C34;
+}
+
+.promo__text {
+  margin: 0;
+  font-size: 24px;
+  line-height: 28px;
+  color: #302C34;
+  max-width: 537px;
+}
+
+.restaraunts__heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 56px;
+  padding-bottom: 44px;
+}
+
+.restaraunts__title {
+  margin: 0;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 42px;
+  color: #000000;
+}
+
+.restaraunts__input {
+  width: 306px;
+}
+
+.cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.card {
+  -webkit-box-shadow: 0px 7px 12px rgba(158, 158, 163, 0.1);
+          box-shadow: 0px 7px 12px rgba(158, 158, 163, 0.1);
+}
+
+.card--mb-30 {
+  margin-bottom: 30px;
+}
+
+.card__img {
+  max-width: 384px;
+  border-radius: 7px 7px 0px 0px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.card-info {
+  padding: 0 24px 34px;
+}
+
+.card-description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.card-description--mb-10 {
+  margin-bottom: 10px;
+}
+
+.card__name {
+  margin: 0;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+  color: #000000;
+}
+
+.card__time {
+  font-size: 12px;
+  line-height: 20px;
+  color: #ffffff;
+  background: #262626;
+  border-radius: 2px;
+  padding: 1px 8px;
+}
+
+.card-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 18px;
+  line-height: 32px;
+  color: #8C8C8C;
+}
+
+.card__rating {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 32px;
+  color: #FFC107;
+  margin-right: 26px;
+}
+
+.card__star {
+  margin-right: 8px;
+}
+
+.card__price {
+  margin-right: 10px;
+}
+
+.card__price::after {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #8C8C8C;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
 }
 /*# sourceMappingURL=style.css.map */
