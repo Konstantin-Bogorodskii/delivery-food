@@ -1,1 +1,13 @@
-# Practise-Layout-Delivery-Food
+# practise layout
+
+Учебный проект
+
+- Проект выполнил: Богородский К.О.
+
+## Используются технологии
+
+- HTML
+- SASS
+- JavaScript
+- Методология БЭМ
+- Адаптив
