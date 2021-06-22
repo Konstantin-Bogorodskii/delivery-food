@@ -1,3 +1,5 @@
+.main
+  background: linear-gradient(180deg, rgba(245, 245, 245, 0) 1.04%, #F5F5F5 100%);
 .restaraunts
   &__heading
     display: flex
@@ -12,18 +14,20 @@
     line-height: 42px
     color: $dark
   &__input
-    width: 306px
+    max-width: 306px
+    width: 100%
+    background-image: url(../img/restaraunts/loop.svg) 
 .cards
   display: flex
-  align-items: center
+  align-items: flex-start
   justify-content: space-between
   flex-wrap: wrap
 .card
   box-shadow: 0px 7px 12px rgba(158, 158, 163, 0.1)
+  flex-basis: 32%
   &--mb-30
     margin-bottom: 30px
   &__img
-    max-width: 384px
     border-radius: 7px 7px 0px 0px
     margin-bottom: 20px
     overflow: hidden
@@ -36,12 +40,14 @@
     &--mb-10
       margin-bottom: 10px
   &__name
+    max-width: 80%
     margin: 0
     font-weight: bold
     font-size: 24px
     line-height: 32px
     color: $dark
   &__time
+    min-width: 56px
     font-size: 12px
     line-height: 20px
     color: $light
@@ -50,21 +56,21 @@
     padding: 1px 8px
   &-footer
     display: flex
-    align-items: center
+    align-items: flex-start
+    flex-wrap: wrap
     font-size: 18px
     line-height: 32px
     color: #8C8C8C
+    width: 100%
   &__rating
     font-weight: bold
     font-size: 18px
     line-height: 32px
     color: #FFC107
     margin-right: 26px
-  &__star
-    margin-right: 8px
-  &__price
-    margin-right: 10px
-    &::after
+    max-height: 35px
+  &__category
+     &::before
       content: ''
       width: 5px
       height: 5px
@@ -72,6 +78,11 @@
       background-color: #8C8C8C
       display: inline-block
       vertical-align: middle
+      margin-right: 10px
       margin-left: 10px
+  &__star
+    margin-right: 8px
+  &__price
+   
 
 

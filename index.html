@@ -15,11 +15,13 @@
   <body>
     <div class="container">
       <header class="header">
-        <img
-          src="img/header/header-logo.svg"
-          alt="Icon: Logo Delivery Food"
-          class="header__logo"
-        />
+        <a href="#" class="logo header__logo">
+          <img
+            src="img/header/header-logo.svg"
+            alt="Icon: Logo Delivery Food"
+            class="logo__img"
+          />
+        </a>
         <input
           type="text"
           class="input header__input"
@@ -44,169 +46,220 @@
         </div>
       </header>
       <!-- /.header -->
-      <section class="promo">
-        <h2 class="promo__title">
-          Онлайн-сервис <br />
-          доставки еды на дом
-        </h2>
-        <p class="promo__text">
-          Блюда из любимого ресторана привезет курьер в перчатках, маске и с
-          антисептиком
-        </p>
-      </section>
-      <!-- /.promo -->
-      <section class="restaraunts">
-        <div class="restaraunts__heading">
-          <h2 class="restaraunts__title">Рестораны</h2>
-          <input
-            type="text"
-            class="input restaraunts__input"
-            placeholder="Поиск блюд и ресторанов"
+    </div>
+    <!-- /.container -->
+    <main class="main">
+      <div class="container">
+        <section class="promo">
+          <h2 class="promo__title">
+            Онлайн-сервис <br />
+            доставки еды на дом
+          </h2>
+          <p class="promo__text">
+            Блюда из любимого ресторана привезет курьер в перчатках, маске и с
+            антисептиком
+          </p>
+        </section>
+        <!-- /.promo -->
+        <section class="restaraunts">
+          <div class="restaraunts__heading">
+            <h2 class="restaraunts__title">Рестораны</h2>
+            <input
+              type="text"
+              class="input restaraunts__input"
+              placeholder="Поиск блюд и ресторанов"
+            />
+          </div>
+          <div class="cards">
+            <div class="card card--mb-30">
+              <img src="img/restaraunts/card-1.png" alt="" class="card__img" />
+              <div class="card-info">
+                <div class="card-description card-description--mb-10">
+                  <h3 class="card__name">Пицца плюс</h3>
+                  <span class="card__time">50 мин</span>
+                </div>
+                <div class="card-footer">
+                  <div class="card__rating">
+                    <img
+                      src="img/restaraunts/star.svg"
+                      alt="Icon: Star"
+                      class="card__star"
+                    />4.5
+                  </div>
+                  <div class="card__price">От 900 ₽</div>
+                  <div class="card__category">Пицца</div>
+                </div>
+                <!-- /.card-price -->
+              </div>
+              <!-- /.card-info -->
+            </div>
+            <!-- /.card -->
+            <div class="card card--mb-30">
+              <img src="img/restaraunts/card-1.png" alt="" class="card__img" />
+              <div class="card-info">
+                <div class="card-description card-description--mb-10">
+                  <h3 class="card__name">Пицца плюс</h3>
+                  <span class="card__time">50 мин</span>
+                </div>
+                <div class="card-footer">
+                  <div class="card__rating">
+                    <img
+                      src="img/restaraunts/star.svg"
+                      alt="Icon: Star"
+                      class="card__star"
+                    />4.5
+                  </div>
+                  <div class="card__price">От 900 ₽</div>
+                  <div class="card__category">Пицца</div>
+                </div>
+                <!-- /.card-price -->
+              </div>
+              <!-- /.card-info -->
+            </div>
+            <!-- /.card -->
+            <div class="card card--mb-30">
+              <img src="img/restaraunts/card-1.png" alt="" class="card__img" />
+              <div class="card-info">
+                <div class="card-description card-description--mb-10">
+                  <h3 class="card__name">Пицца плюс</h3>
+                  <span class="card__time">50 мин</span>
+                </div>
+                <div class="card-footer">
+                  <div class="card__rating">
+                    <img
+                      src="img/restaraunts/star.svg"
+                      alt="Icon: Star"
+                      class="card__star"
+                    />4.5
+                  </div>
+                  <div class="card__price">От 900 ₽</div>
+                  <div class="card__category">Пицца</div>
+                </div>
+                <!-- /.card-price -->
+              </div>
+              <!-- /.card-info -->
+            </div>
+            <!-- /.card -->
+            <div class="card card--mb-30">
+              <img src="img/restaraunts/card-1.png" alt="" class="card__img" />
+              <div class="card-info">
+                <div class="card-description card-description--mb-10">
+                  <h3 class="card__name">Пицца плюс</h3>
+                  <span class="card__time">50 мин</span>
+                </div>
+                <div class="card-footer">
+                  <div class="card__rating">
+                    <img
+                      src="img/restaraunts/star.svg"
+                      alt="Icon: Star"
+                      class="card__star"
+                    />4.5
+                  </div>
+                  <div class="card__price">От 900 ₽</div>
+                  <div class="card__category">Пицца</div>
+                </div>
+                <!-- /.card-price -->
+              </div>
+              <!-- /.card-info -->
+            </div>
+            <!-- /.card -->
+            <div class="card card--mb-30">
+              <img src="img/restaraunts/card-1.png" alt="" class="card__img" />
+              <div class="card-info">
+                <div class="card-description card-description--mb-10">
+                  <h3 class="card__name">Пицца плюс</h3>
+                  <span class="card__time">50 мин</span>
+                </div>
+                <div class="card-footer">
+                  <div class="card__rating">
+                    <img
+                      src="img/restaraunts/star.svg"
+                      alt="Icon: Star"
+                      class="card__star"
+                    />4.5
+                  </div>
+                  <div class="card__price">От 900 ₽</div>
+                  <div class="card__category">Пицца</div>
+                </div>
+                <!-- /.card-price -->
+              </div>
+              <!-- /.card-info -->
+            </div>
+            <!-- /.card -->
+            <div class="card card--mb-30">
+              <img src="img/restaraunts/card-1.png" alt="" class="card__img" />
+              <div class="card-info">
+                <div class="card-description card-description--mb-10">
+                  <h3 class="card__name">Пицца плюс</h3>
+                  <span class="card__time">50 мин</span>
+                </div>
+                <div class="card-footer">
+                  <div class="card__rating">
+                    <img
+                      src="img/restaraunts/star.svg"
+                      alt="Icon: Star"
+                      class="card__star"
+                    />4.5
+                  </div>
+                  <div class="card__price">От 900 ₽</div>
+                  <div class="card__category">Пицца</div>
+                </div>
+                <!-- /.card-price -->
+              </div>
+              <!-- /.card-info -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.cards -->
+        </section>
+        <!-- /.restaraunts -->
+      </div>
+      <!-- /.container -->
+    </main>
+    <!-- /.main -->
+    <div class="container">
+      <footer class="footer">
+        <a href="#" class="logo footer__logo">
+          <img
+            src="img/header/header-logo.svg"
+            alt="Icon: Logo Delivery Food"
+            class="logo__img"
           />
+        </a>
+        <ul class="footer__list">
+          <li class="footer__item">
+            <a href="#" class="footer__link">Ресторанам </a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">Курьерам</a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">Пресс-центр</a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">Контакты</a>
+          </li>
+        </ul>
+        <div class="socials">
+          <a href="#" class="socials__link"
+            ><img
+              src="img/footer/inst.svg"
+              alt="Icon: instagram"
+              class="socials__icon" /></a
+          ><a href="#" class="socials__link"
+            ><img
+              src="img/footer/fb.svg"
+              alt="Icon: Facebook"
+              class="socials__icon" /></a
+          ><a href="#" class="socials__link"
+            ><img
+              src="img/footer/vk.svg"
+              alt="Icon: Vkontakte"
+              class="socials__icon"
+          /></a>
         </div>
-        <div class="cards">
-          <div class="card card--mb-30">
-            <img src="img/restaraunts/card-1.png" alt="" class="card__img" />
-            <div class="card-info">
-              <div class="card-description">
-                <h3 class="card__name">Пицца плюс</h3>
-                <span class="card__time">50 мин</span>
-              </div>
-              <div class="card-footer">
-                <div class="card__rating">
-                  <img
-                    src="img/restaraunts/star.svg"
-                    alt="Icon: Star"
-                    class="card__star"
-                  />4.5
-                </div>
-                <div class="card__price">От 900 ₽</div>
-                <div class="card__category">Пицца</div>
-              </div>
-              <!-- /.card-price -->
-            </div>
-            <!-- /.card-info -->
-          </div>
-          <!-- /.card -->
-          <div class="card card--mb-30">
-            <img src="img/restaraunts/card-1.png" alt="" class="card__img" />
-            <div class="card-info">
-              <div class="card-description">
-                <h3 class="card__name">Пицца плюс</h3>
-                <span class="card__time">50 мин</span>
-              </div>
-              <div class="card-footer">
-                <div class="card__rating">
-                  <img
-                    src="img/restaraunts/star.svg"
-                    alt="Icon: Star"
-                    class="card__star"
-                  />4.5
-                </div>
-                <div class="card__price">От 900 ₽</div>
-                <div class="card__category">Пицца</div>
-              </div>
-              <!-- /.card-price -->
-            </div>
-            <!-- /.card-info -->
-          </div>
-          <!-- /.card -->
-          <div class="card card--mb-30">
-            <img src="img/restaraunts/card-1.png" alt="" class="card__img" />
-            <div class="card-info">
-              <div class="card-description">
-                <h3 class="card__name">Пицца плюс</h3>
-                <span class="card__time">50 мин</span>
-              </div>
-              <div class="card-footer">
-                <div class="card__rating">
-                  <img
-                    src="img/restaraunts/star.svg"
-                    alt="Icon: Star"
-                    class="card__star"
-                  />4.5
-                </div>
-                <div class="card__price">От 900 ₽</div>
-                <div class="card__category">Пицца</div>
-              </div>
-              <!-- /.card-price -->
-            </div>
-            <!-- /.card-info -->
-          </div>
-          <!-- /.card -->
-          <div class="card card--mb-30">
-            <img src="img/restaraunts/card-1.png" alt="" class="card__img" />
-            <div class="card-info">
-              <div class="card-description">
-                <h3 class="card__name">Пицца плюс</h3>
-                <span class="card__time">50 мин</span>
-              </div>
-              <div class="card-footer">
-                <div class="card__rating">
-                  <img
-                    src="img/restaraunts/star.svg"
-                    alt="Icon: Star"
-                    class="card__star"
-                  />4.5
-                </div>
-                <div class="card__price">От 900 ₽</div>
-                <div class="card__category">Пицца</div>
-              </div>
-              <!-- /.card-price -->
-            </div>
-            <!-- /.card-info -->
-          </div>
-          <!-- /.card -->
-          <div class="card card--mb-30">
-            <img src="img/restaraunts/card-1.png" alt="" class="card__img" />
-            <div class="card-info">
-              <div class="card-description">
-                <h3 class="card__name">Пицца плюс</h3>
-                <span class="card__time">50 мин</span>
-              </div>
-              <div class="card-footer">
-                <div class="card__rating">
-                  <img
-                    src="img/restaraunts/star.svg"
-                    alt="Icon: Star"
-                    class="card__star"
-                  />4.5
-                </div>
-                <div class="card__price">От 900 ₽</div>
-                <div class="card__category">Пицца</div>
-              </div>
-              <!-- /.card-price -->
-            </div>
-            <!-- /.card-info -->
-          </div>
-          <!-- /.card -->
-          <div class="card card--mb-30">
-            <img src="img/restaraunts/card-1.png" alt="" class="card__img" />
-            <div class="card-info">
-              <div class="card-description">
-                <h3 class="card__name">Пицца плюс</h3>
-                <span class="card__time">50 мин</span>
-              </div>
-              <div class="card-footer">
-                <div class="card__rating">
-                  <img
-                    src="img/restaraunts/star.svg"
-                    alt="Icon: Star"
-                    class="card__star"
-                  />4.5
-                </div>
-                <div class="card__price">От 900 ₽</div>
-                <div class="card__category">Пицца</div>
-              </div>
-              <!-- /.card-price -->
-            </div>
-            <!-- /.card-info -->
-          </div>
-          <!-- /.card -->
-        </div>
-        <!-- /.cards -->
-      </section>
-      <!-- /.restaraunts -->
+      </footer>
+      <!-- /.footer -->
     </div>
     <!-- /.container -->
   </body>
