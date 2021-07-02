@@ -137,7 +137,7 @@ function displayCart() {
     Object.values(cartItems).map(item => {
       modalContainer.innerHTML += `
         <div class="modal-row modal-row-mb-15">
-          <img src="img/modal/close-button.svg" alt="Close button" class="modal__close-icon"/>
+          <a href="#" class="modal-row__close"></a>
           <span class="modal-row__name">${item.name}</span>
               <strong class="modal-row__price">${
                 item.price * item.inCart
@@ -150,6 +150,7 @@ function displayCart() {
                   type="number"
                   class="modal-row__count"
                   value="${item.inCart}"
+                  data-id="${item.id}"
                   disabled
                 />
                 <button class="modal-row__button modal-row__button--plus">
@@ -163,16 +164,47 @@ function displayCart() {
   }
 }
 
-modalOrder.addEventListener('click', event => {
-  let buttons = modalOrder.querySelectorAll('.modal-row__button');
-  for (let i = 0; i < buttons.length; i++) {
-    if (buttons[i].classList.contains('modal-row__button')) {
-      console.log('da');
+const calculateSeparateItem = (input, action) => {
+  let inputValue = input.querySelector('.modal-row__count');
+  let inputId = inputValue.dataset.id;
+  let cartItems = localStorage.getItem('productsInCart');
+  let inputPrice = input.querySelector('.modal-row__price');
+  let cartPrice = localStorage.getItem('totalCost');
+  let modalTotalPrice = document.querySelector('.modal-total__price');
+  cartPrice = parseInt(cartPrice);
+  cartItems = JSON.parse(cartItems);
+  for (let key in cartItems) {
+    if (inputId == cartItems[key].id && action == 'plus') {
+      inputValue.value++;
+      console.log(cartItems[cartItems[key].id]);
+      cartItems[key].inCart += 1;
+      inputPrice.textContent = `${inputValue.value * cartItems[key].price} ₽`;
+      localStorage.setItem('totalCost', cartPrice + cartItems[key].price);
+      modalTotalPrice.textContent = `${cartPrice + cartItems[key].price} ₽`;
+    }
+    if (
+      inputId == cartItems[key].id &&
+      inputValue.value != 0 &&
+      action == 'minus'
+    ) {
+      inputValue.value--;
+      cartItems[key].inCart -= 1;
+      inputPrice.textContent = inputValue.value * cartItems[key].price;
+      localStorage.setItem('totalCost', cartPrice - cartItems[key].price);
+      modalTotalPrice.textContent = `${cartPrice - cartItems[key].price} ₽`;
     }
   }
-  // if (event.target.classList.contains('modal-row__button')) {
-  //   console.log('da');
-  // }
+  localStorage.setItem('productsInCart', JSON.stringify(cartItems));
+};
+
+modalOrder.addEventListener('click', event => {
+  let input = event.target.closest('.modal-row');
+  if (event.target.classList.contains('modal-row__button--plus')) {
+    calculateSeparateItem(input, 'plus');
+  }
+  if (event.target.classList.contains('modal-row__button--minus')) {
+    calculateSeparateItem(input, 'minus');
+  }
 });
 
 onLoadCartNumbers();

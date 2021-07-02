@@ -54,11 +54,36 @@
     justify-content: space-between
     padding-bottom: 8px
     border-bottom: 1px solid  #D9D9D9
+    position: relative
+    &__close
+      position: absolute
+      left: 2%
+      top: 40%
+      width: 30px
+      height: 30px
+      opacity: 0.3
+      transform: translate(-50%,-50%)
+    &:hover 
+      opacity: 1
+    &:before, &:after 
+      position: absolute
+      top: 15%
+      left: 2.1%
+      content: ' '
+      height: 20px
+      width: 2px
+      background-color: $blue
+    &:before 
+      transform: rotate(45deg)
+    &:after 
+      transform: rotate(-45deg)
+
     &-mb-15
       margin-bottom: 15px
     &__name
       font-size: 18px
       line-height: 32px
+      margin-left: 5%
     &__price
       font-weight: bold
       font-size: 20px
