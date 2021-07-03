@@ -12,6 +12,7 @@ document.addEventListener('keydown', closeModal);
 function toggleModal() {
   modalDialog.classList.toggle('modal__dialog--visible');
   modalOverlay.classList.toggle('modal__overlay--visible');
+  document.body.classList.toggle('page-scroll');
 }
 
 function closeModal(event) {
@@ -166,6 +167,7 @@ function displayCart() {
 
 const calculateSeparateItem = (input, action) => {
   let inputValue = input.querySelector('.modal-row__count');
+  let productValue = localStorage.getItem('cartNumbers');
   let inputId = inputValue.dataset.id;
   let cartItems = localStorage.getItem('productsInCart');
   let inputPrice = input.querySelector('.modal-row__price');
@@ -181,6 +183,7 @@ const calculateSeparateItem = (input, action) => {
       inputPrice.textContent = `${inputValue.value * cartItems[key].price} ₽`;
       localStorage.setItem('totalCost', cartPrice + cartItems[key].price);
       modalTotalPrice.textContent = `${cartPrice + cartItems[key].price} ₽`;
+      productValue++;
     }
     if (
       inputId == cartItems[key].id &&
@@ -189,11 +192,14 @@ const calculateSeparateItem = (input, action) => {
     ) {
       inputValue.value--;
       cartItems[key].inCart -= 1;
-      inputPrice.textContent = inputValue.value * cartItems[key].price;
+      inputPrice.textContent = `${inputValue.value * cartItems[key].price} ₽`;
       localStorage.setItem('totalCost', cartPrice - cartItems[key].price);
       modalTotalPrice.textContent = `${cartPrice - cartItems[key].price} ₽`;
+      productValue--;
     }
   }
+  localStorage.setItem('cartNumbers', productValue);
+  document.querySelector('.header__basket-count').textContent = productValue;
   localStorage.setItem('productsInCart', JSON.stringify(cartItems));
 };
 
@@ -205,6 +211,41 @@ modalOrder.addEventListener('click', event => {
   if (event.target.classList.contains('modal-row__button--minus')) {
     calculateSeparateItem(input, 'minus');
   }
+  if (event.target.classList.contains('modal-row__close')) {
+    removeProduct(input);
+  }
 });
+function removeProduct(input) {
+  let productValue = localStorage.getItem('cartNumbers');
+  let modalTotalPrice = document.querySelector('.modal-total__price');
+  let inputId = input.querySelector('.modal-row__count').dataset.id;
+  let inputCount = input.querySelector('.modal-row__count');
+  let cartItems = localStorage.getItem('productsInCart');
+  cartItems = JSON.parse(cartItems);
+  let cartPrice = localStorage.getItem('totalCost');
+  cartPrice = parseInt(cartPrice);
+  for (let key in cartItems) {
+    if (inputId == cartItems[key].id) {
+      input.remove();
+      cartPrice -= cartItems[key].price * +inputCount.value;
+      productValue -= +inputCount.value;
+      delete cartItems[key];
+    }
+  }
+  localStorage.setItem('productsInCart', JSON.stringify(cartItems));
+  localStorage.setItem('cartNumbers', productValue);
+  document.querySelector('.header__basket-count').textContent = productValue;
+  modalTotalPrice.textContent = `${cartPrice} ₽`;
+  localStorage.setItem('totalCost', cartPrice);
+}
+
+// let modalCancel = document.querySelector('.modal-total__button-cancel');
+// modalCancel.addEventListener('click', () => {
+//   let cartItems = localStorage.getItem('productsInCart');
+//   cartItems = JSON.parse(cartItems);
+//   for (let key in cartItems) {
+//     delete cartItems[key];
+//   }
+// });
 
 onLoadCartNumbers();
