@@ -178,7 +178,6 @@ const calculateSeparateItem = (input, action) => {
   for (let key in cartItems) {
     if (inputId == cartItems[key].id && action == 'plus') {
       inputValue.value++;
-      console.log(cartItems[cartItems[key].id]);
       cartItems[key].inCart += 1;
       inputPrice.textContent = `${inputValue.value * cartItems[key].price} ₽`;
       localStorage.setItem('totalCost', cartPrice + cartItems[key].price);
@@ -196,6 +195,11 @@ const calculateSeparateItem = (input, action) => {
       localStorage.setItem('totalCost', cartPrice - cartItems[key].price);
       modalTotalPrice.textContent = `${cartPrice - cartItems[key].price} ₽`;
       productValue--;
+    }
+    if (inputValue.value == 0) {
+      removeProduct(input);
+      delete cartItems[inputId];
+      localStorage.setItem('productsInCart', JSON.stringify(cartItems));
     }
   }
   localStorage.setItem('cartNumbers', productValue);
