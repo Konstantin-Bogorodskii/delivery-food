@@ -21,6 +21,10 @@
     margin-bottom: 10px
     
 .card
+  transition: all 0.2s 
+  &:hover
+    border: 1px solid $blue
+    border-radius: 6px
   &__text
     margin: 0
     margin-bottom: 25px
@@ -29,7 +33,7 @@
     color: #8C8C8C
   &-info
     flex-grow: 1
-    padding: 0 24px 38px
+    padding: 0 24px 
   &-options
     display: flex
     align-items: center
@@ -46,6 +50,11 @@
       color: $light
       margin-right: 32px
       border: 1px solid $blue
+      transition: all 0.2s ease-out
+      &:hover
+        background: $blue
+        box-shadow: 0 0 15px $blue
+        border-radius: 7px
     &__basket
       margin-left: 4px
     &__price

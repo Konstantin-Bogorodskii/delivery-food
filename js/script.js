@@ -85,8 +85,7 @@ function cartNumbers(product) {
   productValue = parseInt(productValue);
   if (productValue) {
     localStorage.setItem('cartNumbers', productValue + 1);
-    document.querySelector('.header__basket-count').textContent =
-      productValue + 1;
+    document.querySelector('.header__basket-count').textContent = productValue + 1;
   } else {
     localStorage.setItem('cartNumbers', 1);
     document.querySelector('.header__basket-count').textContent = 1;
@@ -97,7 +96,6 @@ function cartNumbers(product) {
 function setItems(product) {
   let cartItems = localStorage.getItem('productsInCart');
   cartItems = JSON.parse(cartItems);
-
   if (cartItems != null) {
     if (cartItems[product.id] == undefined) {
       cartItems = {
@@ -136,13 +134,12 @@ function displayCart() {
   if (cartItems && modalContainer) {
     modalContainer.innerHTML = '';
     Object.values(cartItems).map(item => {
+      if (item.inCart === 0) return;
       modalContainer.innerHTML += `
         <div class="modal-row modal-row-mb-15">
           <a href="#" class="modal-row__close"></a>
           <span class="modal-row__name">${item.name}</span>
-              <strong class="modal-row__price">${
-                item.price * item.inCart
-              } ₽</strong>
+              <strong class="modal-row__price">${item.price * item.inCart} ₽</strong>
               <div class="modal-row__buttons">
                 <button class="modal-row__button modal-row__button--minus">
                   -
@@ -184,22 +181,14 @@ const calculateSeparateItem = (input, action) => {
       modalTotalPrice.textContent = `${cartPrice + cartItems[key].price} ₽`;
       productValue++;
     }
-    if (
-      inputId == cartItems[key].id &&
-      inputValue.value != 0 &&
-      action == 'minus'
-    ) {
+    if (inputId == cartItems[key].id && inputValue.value != 1 && action == 'minus') {
       inputValue.value--;
       cartItems[key].inCart -= 1;
+
       inputPrice.textContent = `${inputValue.value * cartItems[key].price} ₽`;
       localStorage.setItem('totalCost', cartPrice - cartItems[key].price);
       modalTotalPrice.textContent = `${cartPrice - cartItems[key].price} ₽`;
       productValue--;
-    }
-    if (inputValue.value == 0) {
-      removeProduct(input);
-      delete cartItems[inputId];
-      localStorage.setItem('productsInCart', JSON.stringify(cartItems));
     }
   }
   localStorage.setItem('cartNumbers', productValue);
@@ -233,7 +222,7 @@ function removeProduct(input) {
       input.remove();
       cartPrice -= cartItems[key].price * +inputCount.value;
       productValue -= +inputCount.value;
-      delete cartItems[key];
+      cartItems[key].inCart = 0;
     }
   }
   localStorage.setItem('productsInCart', JSON.stringify(cartItems));
@@ -243,13 +232,14 @@ function removeProduct(input) {
   localStorage.setItem('totalCost', cartPrice);
 }
 
-// let modalCancel = document.querySelector('.modal-total__button-cancel');
-// modalCancel.addEventListener('click', () => {
-//   let cartItems = localStorage.getItem('productsInCart');
-//   cartItems = JSON.parse(cartItems);
-//   for (let key in cartItems) {
-//     delete cartItems[key];
-//   }
-// });
+let modalCancel = document.querySelector('.modal-total__button-cancel');
+modalCancel.addEventListener('click', () => {
+  let answer = confirm('Вы уверены, что хотите полностью очистить корзину?');
+  console.log(answer);
+  if (answer) {
+    localStorage.clear();
+    location.reload();
+  }
+});
 
 onLoadCartNumbers();
